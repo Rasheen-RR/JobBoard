@@ -1,0 +1,50 @@
+﻿@page
+@model JobBoard.Pages.EducationDetails.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Education</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Education.EducationId" />
+            <div class="form-group">
+                <label asp-for="Education.SchoolName" class="control-label"></label>
+                <input asp-for="Education.SchoolName" class="form-control" />
+                <span asp-validation-for="Education.SchoolName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Education.EducationType" class="control-label"></label>
+                <input asp-for="Education.EducationType" class="form-control" />
+                <span asp-validation-for="Education.EducationType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Education.StartDate" class="control-label"></label>
+                <input asp-for="Education.StartDate" class="form-control" />
+                <span asp-validation-for="Education.StartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Education.EndDate" class="control-label"></label>
+                <input asp-for="Education.EndDate" class="form-control" />
+                <span asp-validation-for="Education.EndDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

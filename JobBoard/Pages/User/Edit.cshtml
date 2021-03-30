@@ -1,0 +1,60 @@
+﻿@page
+@model JobBoard.Pages.User.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Candidate</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Candidate.CandidateId" />
+            <div class="form-group">
+                <label asp-for="Candidate.FirstName" class="control-label"></label>
+                <input asp-for="Candidate.FirstName" class="form-control" />
+                <span asp-validation-for="Candidate.FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Candidate.LastName" class="control-label"></label>
+                <input asp-for="Candidate.LastName" class="form-control" />
+                <span asp-validation-for="Candidate.LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Candidate.Email" class="control-label"></label>
+                <input asp-for="Candidate.Email" class="form-control" />
+                <span asp-validation-for="Candidate.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Candidate.password" class="control-label"></label>
+                <input asp-for="Candidate.password" class="form-control" />
+                <span asp-validation-for="Candidate.password" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Candidate.IsActive" /> @Html.DisplayNameFor(model => model.Candidate.IsActive)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Candidate.ResumeId" class="control-label"></label>
+                <select asp-for="Candidate.ResumeId" class="form-control" asp-items="ViewBag.ResumeId"></select>
+                <span asp-validation-for="Candidate.ResumeId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

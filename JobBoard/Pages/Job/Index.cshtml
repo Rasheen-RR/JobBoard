@@ -1,0 +1,114 @@
+﻿@page
+@model JobBoard.Pages.Job.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.JobPosting[0].Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JobPosting[0].JobFunction)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JobPosting[0].Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JobPosting[0].Requirement)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JobPosting[0].Responsibilities)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JobPosting[0].Qualifications)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JobPosting[0].Skills)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JobPosting[0].ModifiedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JobPosting[0].CreatedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JobPosting[0].StartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JobPosting[0].EndDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JobPosting[0].IsPublic)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JobPosting[0].IsDraft)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JobPosting[0].OwnerId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.JobPosting) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JobFunction)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Requirement)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Responsibilities)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Qualifications)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Skills)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModifiedDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EndDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsPublic)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsDraft)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OwnerId)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.JobId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.JobId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.JobId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

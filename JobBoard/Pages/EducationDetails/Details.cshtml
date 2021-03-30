@@ -1,0 +1,43 @@
+﻿@page
+@model JobBoard.Pages.EducationDetails.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Education</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Education.SchoolName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Education.SchoolName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Education.EducationType)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Education.EducationType)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Education.StartDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Education.StartDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Education.EndDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Education.EndDate)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Education.EducationId">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

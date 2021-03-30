@@ -1,0 +1,103 @@
+﻿@page
+@model JobBoard.Pages.Job.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>JobPosting</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.JobPosting.Title)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.JobPosting.Title)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.JobPosting.JobFunction)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.JobPosting.JobFunction)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.JobPosting.Description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.JobPosting.Description)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.JobPosting.Requirement)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.JobPosting.Requirement)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.JobPosting.Responsibilities)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.JobPosting.Responsibilities)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.JobPosting.Qualifications)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.JobPosting.Qualifications)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.JobPosting.Skills)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.JobPosting.Skills)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.JobPosting.ModifiedDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.JobPosting.ModifiedDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.JobPosting.CreatedDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.JobPosting.CreatedDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.JobPosting.StartDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.JobPosting.StartDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.JobPosting.EndDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.JobPosting.EndDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.JobPosting.IsPublic)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.JobPosting.IsPublic)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.JobPosting.IsDraft)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.JobPosting.IsDraft)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.JobPosting.OwnerId)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.JobPosting.OwnerId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.JobPosting.JobId">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

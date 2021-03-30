@@ -1,0 +1,54 @@
+﻿@page
+@model JobBoard.Pages.Employer.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Company[0].CompanyName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Company[0].CreatedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Company[0].Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Company[0].password)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Company) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CompanyName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.password)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.CompanyId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.CompanyId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.CompanyId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

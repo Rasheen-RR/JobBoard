@@ -1,0 +1,49 @@
+﻿@page
+@model JobBoard.Pages.ExperienceDetails.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Experience</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Experience.StartDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Experience.StartDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Experience.EndDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Experience.EndDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Experience.CompanyName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Experience.CompanyName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Experience.Position)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Experience.Position)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Experience.WorkDone)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Experience.WorkDone)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Experience.ExperienceId">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>
